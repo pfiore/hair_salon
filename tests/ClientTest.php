@@ -23,7 +23,7 @@
             $test_stylist->save();
             $stylist_id = $test_stylist->getId();
 
-            $name = "Diane Douglas";//youre my client so I dont get confused ;)
+            $name = "Diane Douglas";//youre my client so I dont get confused but its gonna happen anyway ;)
             $id = 1;
             $test_client = new Client($name, $id, $stylist_id);
 

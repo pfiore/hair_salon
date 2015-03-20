@@ -1,0 +1,16 @@
+<h1>Update {{ client.getName }}'s account </h1>
+
+<form action="/clients/{{ client.getId }}" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="name">Rename client:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Update</button>
+</form>
+
+<form action="/clients/{{ client.getId }}" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete this client</button>
+</form>

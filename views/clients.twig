@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Clients</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+
+
+    {% if clients is not empty %}
+        <p>Here are all your clients:</p>
+        <ul>
+            {% for client in clients %}
+                <li>
+                    <a href="/clients/{{ client.getId }}">{{ client.getName }}</a>
+                    <a href="/clients/{{ client.getId }}/edit">Edit</a>
+                    <form action="/clients/{{ client.getId }}" method="post">
+                      <input name="_method" type="hidden" value="delete">
+                      <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+      <p>There are no clients.</p>
+    {% endif %}
+
+    <form action="/delete_clients" method="post">
+        <button type="submit">Delete All</button>
+    </form>
+    <p><a href='/'>Back to all stylists</a></p>
+</body>
+</html>

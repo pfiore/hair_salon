@@ -51,15 +51,15 @@
 
         static function getAll()
         {
-            $all_stylist = $GLOBALS['DB']->query("SELECT * FROM stylist;");
-            $stylist_to_return = array();
-            foreach($all_stylist as $current_stylist) {
+            $all_stylists = $GLOBALS['DB']->query("SELECT * FROM stylist;");
+            $stylists_to_return = array();
+            foreach($all_stylists as $current_stylist) {
                 $name = $current_stylist['name'];
                 $id = $current_stylist['id'];
                 $new_stylist = new Stylist($name, $id);
-                array_push($stylist_to_return, $new_stylist);
+                array_push($stylists_to_return, $new_stylist);
             }
-            return $stylist_to_return;
+            return $stylists_to_return;
         }
 
         static function deleteAll()
@@ -70,8 +70,8 @@
         static function find($stylist_search_id)
         {
             $found_stylist = null;
-            $all_stylist = Stylist::getAll();
-            foreach($all_stylist as $current_stylist) {
+            $all_stylists = Stylist::getAll();
+            foreach($all_stylists as $current_stylist) {
                 $current_id = $current_stylist->getId();
                 if ($current_id == $stylist_search_id) {
                   $found_stylist = $current_stylist;

@@ -1,0 +1,10 @@
+
+
+    <h1>{{ client.getName }}</h1>
+
+    <form action="/clients/{{ client.getId }}" method="post">
+        <input name="_method" type="hidden" value="delete">
+
+        <button type="submit">Delete this client</button>
+        <p><a href='/'>Back to all stylists</a></p>
+    </form>
