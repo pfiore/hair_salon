@@ -6,6 +6,7 @@
     */
 
     require_once "src/Stylist.php";
+    require_once "src/Client.php";
 
     $DB = new PDO('pgsql:host=localhost;dbname=hair_salon_test');
 
